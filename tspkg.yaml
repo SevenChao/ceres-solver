@@ -1,0 +1,16 @@
+name: ceres_solver
+version:  __from_changelog__
+maintainer: Bin Chao <bin.chao@tusimple.ai>
+
+extra_deps:
+  apt: cmake libgoogle-glog-dev libatlas-base-dev libeigen3-dev
+
+
+build: |
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR -DCMAKE_BUILD_TYPE=$CMAKE_BUILD_TYPE ..
+  make -j4
+  make install
+
+  
